@@ -67,11 +67,47 @@ The frontend dev server proxies `/api` to `http://localhost:5000`, so start the 
 ## Project Structure
 
 ```
-uniconnect/
-├── client/          → React frontend (Vite)
-├── server/          → Node + Express API
-├── database/        → MySQL schema
-└── README.md
+UniConnect/
+│
+├── client/                     # React Frontend (User Interface)
+│   ├── src/
+│   │   ├── pages/              # All main pages (Home, Mood, Chat, Profile, etc.)
+│   │   ├── components/         # Reusable UI components
+│   │   ├── context/            # AuthContext (JWT + user state management)
+│   │   ├── services/           # API calls (Axios configuration)
+│   │   ├── App.jsx             # Main App routing
+│   │   └── main.jsx            # React entry point
+│   │
+│   ├── index.html              # Root HTML file
+│   ├── package.json            # Frontend dependencies
+│   ├── vite.config.js          # Vite configuration
+│   ├── tailwind.config.js      # Tailwind CSS configuration
+│   └── postcss.config.js       # PostCSS configuration
+│
+├── server/                     # Node.js + Express Backend
+│   ├── routes/                 # API route definitions
+│   │   ├── auth.js
+│   │   ├── users.js
+│   │   ├── mood.js
+│   │   ├── chat.js
+│   │   ├── kindness.js
+│   │   ├── clubs.js
+│   │   ├── deep-connect.js
+│   │   └── wellness.js
+│   │
+│   ├── controllers/            # Business logic for each feature
+│   ├── middleware.js           # JWT authentication middleware
+│   ├── db.js                   # MySQL database connection
+│   ├── server.js               # Main Express server file
+│   └── package.json            # Backend dependencies
+│
+├── database/
+│   └── schema.sql              # MySQL database schema
+│
+├── .gitignore                  # Ignored files (node_modules, .env, etc.)
+├── README.md                   # Project documentation
+└── package-lock.json           # Dependency lock file
+
 ```
 
 ## Features
@@ -118,3 +154,4 @@ The frontend uses base URL `/api`; Vite proxies `/api` to the backend (e.g. `htt
 ## License
 
 MIT – Hackathon project.
+
